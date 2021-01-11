@@ -1,8 +1,7 @@
 (function flexible (window, document) {
   var docEl = document.documentElement
   var dpr = window.devicePixelRatio || 1
-
-  console.log("docEL,dpr:",docEl,dpr);
+  console.log("dpr:",dpr);
   // adjust body font size
   function setBodyFontSize () {
     if (document.body) {
@@ -16,9 +15,9 @@
 
   // set 1rem = viewWidth / 10
   function setRemUnit () {
-    var rem = docEl.clientWidth *100  / 375
+    var rem = docEl.clientWidth *100  / 375 * ( dpr / 2);    //根据dpr 同比例缩放rem的值
     docEl.style.fontSize = rem + 'px'
-    console.log("rem:",document.body.style.fontSize,docEl.style.fontSize);
+    console.log("clientWidth:",docEl.clientWidth,"rem:",rem);
   }
   setRemUnit()
 
