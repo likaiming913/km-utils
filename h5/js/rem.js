@@ -26,7 +26,7 @@
 
 (function (doc, win) {
     // 如果设计稿的宽度为750 则实际对应的iPhone6 屏幕宽度为375  dpr: 750/375=2
-    var sWide = 375;   // 以iPhone6 的屏幕css宽度375 为标准
+    var sWide = 750 / 2;   // 以iPhone6 的屏幕css宽度375 为标准
     var docEl = doc.documentElement,
       resizeEvt = "orientationchange" in window ? "orientationchange" : "resize",
       recalc = function () {
